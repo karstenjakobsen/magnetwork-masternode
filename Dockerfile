@@ -18,13 +18,13 @@ RUN apt-get install -y libdb4.8-dev libdb4.8++-dev && \
 RUN apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
-COPY packages/magnetwork-v1.3.0.tar.gz /usr/local/src/magnetwork-v1.3.0.tar.gz
+COPY packages/magnetwork-v1.4.2.tar.gz /usr/local/src/magnetwork-v1.4.2.tar.gz
 
 WORKDIR /usr/local/src/
-RUN tar -xf magnetwork-v1.3.0.tar.gz
+RUN tar -xf magnetwork-v1.4.2.tar.gz
 
 # Set workdir and extract package
-WORKDIR /usr/local/src/magnet-1.3.0
+WORKDIR /usr/local/src/magnet-1.4.2
 
 #RUN chmod +x src/leveldb/build_detect_platform && \
 #    chmod +x src/secp256k1/autogen.sh
@@ -32,7 +32,7 @@ RUN chmod +x compile.sh
 RUN ./compile.sh
 RUN cp src/magnetd /usr/bin/magnetd
 
-COPY config/* /root/.magnet/
+COPY config/* /tmp/.magnet/
 
 # Copy our entrypoint file
 COPY entrypoint.sh /

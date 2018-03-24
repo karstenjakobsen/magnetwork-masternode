@@ -5,5 +5,7 @@ ulimit -m unlimited
 ulimit -v unlimited
 ulimit -n 65536
 
-exec magnetd -conf=/root/.magnet/magnet.conf -printtoconsole
+cp /tmp/.magnet/* /root/.magnet/
+
+exec magnetd -conf=/root/.magnet/magnet.conf
 # -conf=/root/.magnet/magnet.conf
