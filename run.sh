@@ -8,4 +8,4 @@ docker run \
   --net=host \
   -v ~/.magnet:/root/.magnet \
   -d \
-  karstenjakobsen/magnetwork-masternode:1.3.0
+  karstenjakobsen/magnetwork-masternode:1.4.2
